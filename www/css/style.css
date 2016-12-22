@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+button {
+  max-width: 500px;
+}
+
+#target-event-input {
+  height:3rem;
+  font-size:1.1em;
+  line-height:1.1em;
+  color: black;
+  font-family: monospace!important;
+}

@@ -1,0 +1,14 @@
+<ion-view view-title="Choose Classifier" cache-view="false">
+  <ion-content>
+    <div class="card" ng-repeat="c in cls.list">
+      <div class="item item-divider item-positive">
+        {{ ::c.name }}
+      </div>
+      <ion-item ng-repeat="e in c.events">{{ ::e }}</ion-item>
+      <ion-item class="item item-icon-left assertive" ng-click="cls.use(c.name)">
+        <i class="icon ion-happy-outline"></i>
+        Use it!
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+<ion-view view-title="Recordings" cache-view="false">
+  <ion-content>
+    <div class="item item-input">
+      <input type="text" id="target-event-input"
+        placeholder="Target Event"
+        ng-model="rec.targetEvent"
+        ng-disabled="rec.selectMode">
+      <button
+        ng-click="rec.start()"
+        ng-disabled="rec.selectMode"
+        class="button button-icon icon ion-arrow-right-c button-icon-left positive"
+        style="margin-right: 1rem">
+      </button>
+    </div>
+
+    <div ng-if="!rec.selectMode">
+      <ion-item ng-click="rec.selectEvent($index)" on-hold="rec.toSelectMode($index)" ng-repeat="event in rec.list">
+        {{ event.name }}
+        <span class="item-note">{{ event.duration.toFixed(2) }} seconds</span>
+      </ion-item>
+    </div>
+
+    <div ng-if="rec.selectMode">
+      <ion-list>
+        <ion-checkbox ng-repeat="event in rec.list" ng-model="event.selected">
+          {{ event.name }}
+          <span class="item-note">{{ event.duration.toFixed(2) }} seconds</span>
+        </ion-checkbox>
+      </ion-list>
+
+      <center class="padding">
+        <button class="button button-block button-outline button-positive" ng-click="rec.createClassifier()">
+          Create Classifier
+        </button>
+        <button class="button button-block button-outline button-assertive" ng-click="rec.toListMode()">
+          Cancel
+        </button>
+      </center>
+    </div>
+  </ion-content>
+</ion-view>

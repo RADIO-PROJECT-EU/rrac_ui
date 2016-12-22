@@ -1,0 +1,30 @@
+<ion-view view-title="Settings" cache-view="false">
+  <ion-content>
+    <div class="list" style="font-family:monospace;">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">MQTT broker host</span>
+        <input ng-model="settings.broker.host" type="text" placeholder="MQTT broker host" style="font-family:monospace">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">MQTT broker port</span>
+        <input ng-model="settings.broker.port" type="text" placeholder="MQTT broker port">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Path</span>
+        <input ng-model="settings.broker.path" type="text">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">username</span>
+        <input ng-model="settings.broker.username" type="text" placeholder="username">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">password</span>
+        <input ng-model="settings.broker.password" type="text" placeholder="password">
+      </label>
+    </div>
+
+    <center class="padding">
+      <button ui-sref="intro" ng-click="settings.save()" class="button button-block button-outline button-positive">Save</button>
+    </center>
+  </ion-content>
+</ion-view>

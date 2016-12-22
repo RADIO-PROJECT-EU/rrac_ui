@@ -1,0 +1,15 @@
+<ion-view view-title="Events Log" cache-view="false" hide-nav-bar="true">
+  <div class="bar bar-header bar-stable">
+    <h1 class="title">Events Log</h1>
+  </div>
+
+  <ion-scroll style="padding-top: 44px; height: calc(100% - 80px); box-sizing: border-box">
+    <ion-item collection-repeat="item in log.list">
+      <h2>{{ item.event }} <span class="item-note">{{ item.t * 1000 | date: 'hh:mm:ss' }}</span></h2>
+      <p>Probability {{ item.prob.toFixed(3) }} <span class="item-note">Energy: {{ item.energy.toFixed(4) }}</span></p>
+    </ion-item>
+  </ion-scroll>
+  <center class="padding">
+    <button class="button button-block button-outline button-dark" ng-click="log.stop()">Stop</button>
+  </center>
+</ion-view>
